@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="home-container">
+  <div class="hero">
+    <h1>Welcome to Insure+ Insurance Portal</h1>
+    <p>Explore Our Latest Policies</p>
+  </div>
+
+  <div class="policy-grid">
+    <app-policy-card
+      *ngFor="let policy of policies"
+      [policy]="policy"
+      [isAdmin]="false">
+    </app-policy-card>
+  </div>
+
+  <footer>
+    <p>© 2025 Insure+ — Securing Your Future</p>
+  </footer>
+</div>

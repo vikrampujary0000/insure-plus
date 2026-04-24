@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <span class="brand">INSURE+ Portal</span>
+
+  <div class="nav-right">
+    <button
+      *ngIf="!authService.isLoggedIn()"
+      class="btn-login"
+      (click)="openLogin()">
+      Admin Login
+    </button>
+
+    <button
+      *ngIf="authService.isLoggedIn()"
+      class="btn-logout"
+      (click)="authService.logout()">
+      Logout
+    </button>
+  </div>
+</nav>
+
+<!-- Login modal rendered here -->
+<app-admin-login
+  *ngIf="showLoginModal"
+  (closeModal)="onLoginClose()">
+</app-admin-login>

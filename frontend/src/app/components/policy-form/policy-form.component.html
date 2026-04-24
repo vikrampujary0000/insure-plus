@@ -1,0 +1,68 @@
+<div class="modal-overlay">
+  <div class="modal">
+    <h2>{{ isEditMode ? 'Edit Policy' : 'Add Policy' }}</h2>
+
+    <div class="field">
+      <label>Policy Name</label>
+      <input
+        type="text"
+        placeholder="Policy Name"
+        [(ngModel)]="formData.name"
+      />
+    </div>
+
+    <div class="field">
+      <label>Premium (₹ per year)</label>
+      <input
+        type="number"
+        placeholder="Premium (₹ per year)"
+        [(ngModel)]="formData.premium"
+      />
+    </div>
+
+    <div class="field">
+      <label>Coverage Amount (₹) — auto-calculated</label>
+      <input
+        type="number"
+        placeholder="Coverage Amount (₹)"
+        [value]="formData.premium * formData.duration * 10"
+        readonly
+        class="readonly-field"
+      />
+    </div>
+
+    <div class="field">
+      <label>Duration (years)</label>
+      <input
+        type="number"
+        placeholder="Duration (years)"
+        [(ngModel)]="formData.duration"
+      />
+    </div>
+
+    <div class="field">
+      <label>Eligibility</label>
+      <input
+        type="text"
+        placeholder="Eligibility"
+        [(ngModel)]="formData.eligibility"
+      />
+    </div>
+
+    <div class="field">
+      <label>Benefits (comma separated)</label>
+      <input
+        type="text"
+        placeholder="Benefits (comma separated)"
+        [(ngModel)]="benefitsInput"
+      />
+    </div>
+
+    <div class="actions">
+      <button class="btn-save" (click)="onSave()">
+        {{ isEditMode ? 'Update' : 'Save' }}
+      </button>
+      <button class="btn-cancel" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

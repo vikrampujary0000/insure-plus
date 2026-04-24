@@ -1,0 +1,46 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* text-align: center; */
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.benefits ul {
+  /* margin: 6px 0 0 16px; */
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-edit {
+  border: 2px solid #1a3a6b;
+  background: transparent;
+  color: #1a3a6b;
+  padding: 6px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  border: 2px solid #1a3a6b;
+  background: transparent;
+  color: #1a3a6b;
+  padding: 6px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}

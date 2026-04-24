@@ -1,0 +1,37 @@
+<div class="admin-layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <button class="btn-nav active">Policies</button>
+    <button class="btn-logout" (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h2>Our Policies</h2>
+
+    <div class="policy-grid">
+      <app-policy-card
+        *ngFor="let policy of policies"
+        [policy]="policy"
+        [isAdmin]="true"
+        (editPolicy)="openEditForm($event)"
+        (deletePolicy)="onDeletePolicy($event)">
+      </app-policy-card>
+    </div>
+
+    <button class="btn-add" (click)="openAddForm()">
+      + Add New Policy
+    </button>
+  </div>
+
+</div>
+
+<!-- Add / Edit modal -->
+<app-policy-form
+  *ngIf="showForm"
+  [policy]="selectedPolicy"
+  (save)="onFormSave($event)"
+  (cancel)="onFormCancel()">
+</app-policy-form>

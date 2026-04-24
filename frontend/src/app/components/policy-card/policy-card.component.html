@@ -1,0 +1,21 @@
+<div class="card">
+  <h3>{{ policy.name }}</h3>
+
+  <p><strong>Premium:</strong> ₹{{ policy.premium }}/year</p>
+  <p><strong>Coverage:</strong> ₹{{ policy.coverage }}</p>
+  <p><strong>Duration:</strong> {{ policy.duration }} years</p>
+  <p><strong>Eligibility:</strong> {{ policy.eligibility }}</p>
+
+  <div class="benefits">
+    <strong>Benefits:</strong>
+    <ul>
+      <li *ngFor="let benefit of policy.benefits">{{ benefit }}</li>
+    </ul>
+  </div>
+
+  <!-- Only shown in admin view -->
+  <div class="actions" *ngIf="isAdmin">
+    <button class="btn-edit" (click)="onEdit()">Edit</button>
+    <button class="btn-delete" (click)="onDelete()">Delete</button>
+  </div>
+</div>

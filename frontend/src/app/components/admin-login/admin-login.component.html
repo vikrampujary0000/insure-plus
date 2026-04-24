@@ -1,0 +1,22 @@
+<div class="modal-overlay">
+  <div class="modal">
+    <h2>Admin Login</h2>
+
+    <input
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="username"
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+    />
+
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <button class="btn-login" (click)="login()">Login</button>
+    <button class="btn-close" (click)="close()">Close</button>
+  </div>
+</div>
